@@ -1,0 +1,79 @@
+.sina-launcher { flex-shrink:0; }
+.sina-launcher .sina-symbol { transition:transform .38s cubic-bezier(.16,1,.3,1); }
+.sina-launcher:hover .sina-symbol { transform:rotate(12deg); }
+.sina-launcher[aria-expanded="true"] .sina-symbol { transform:rotate(90deg); }
+.sina-overlay { position:fixed; inset:0; z-index:59; background:#183d2f33; animation:sina-fade .18s ease both; }
+.sina-panel { position:fixed; z-index:60; right:27px; bottom:91px; width:400px; max-width:calc(100vw - 34px); height:min(610px,calc(100dvh - 110px)); display:flex; flex-direction:column; min-height:0; background:#fff; color:var(--ink); border:1px solid var(--border); border-radius:4px; box-shadow:0 8px 40px #183d2f1c; overflow:hidden; outline:none; animation:sina-open .34s cubic-bezier(.16,1,.3,1) both; font-family:inherit; }
+.sina-header { flex-shrink:0; display:flex; align-items:center; gap:12px; padding:20px 18px; background:var(--forest); color:#fff; }
+.sina-mark { width:38px; height:38px; display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1px solid #ffffff40; border-radius:50%; }
+.sina-heading { flex:1; min-width:0; }
+.sina-heading h2 { font-size:22px; letter-spacing:-.035em; line-height:1.2; color:#fff; }
+.sina-heading p { margin-top:4px; font-size:10px; line-height:1.5; color:#e2e9e1; }
+.sina-header-actions { display:flex; gap:2px; flex-shrink:0; }
+.sina-icon-button,.sina-close { display:flex; align-items:center; justify-content:center; width:32px; height:34px; border:0; border-radius:3px; background:transparent; color:inherit; transition:background .2s; }
+.sina-icon-button:hover { background:#ffffff16; }
+.sina-header :focus-visible { outline-color:var(--gold); outline-offset:1px; }
+.sina-history { flex:1; min-height:0; padding:22px 18px 20px; overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#55755e var(--paper); }
+.sina-history:focus-visible { outline-offset:-3px; }
+.sina-message { width:fit-content; max-width:91%; margin-bottom:12px; padding:11px 13px; border-radius:12px; animation:sina-message-in .3s cubic-bezier(.16,1,.3,1) both; transform-origin:bottom left; }
+.sina-message p { font-size:14px; line-height:1.65; color:inherit; white-space:pre-wrap; overflow-wrap:anywhere; }
+.sina-message-sina { background:var(--paper); border:1px solid #e8ede8; border-bottom-left-radius:3px; color:var(--ink); }
+.sina-message-visitor { margin-left:auto; background:var(--forest); border-bottom-right-radius:3px; color:#fff; transform-origin:bottom right; }
+.sina-written { position:relative; }
+.sina-text-reserve { visibility:hidden; }
+.sina-text-live { position:absolute; inset:0; }
+.sina-caret { display:inline; position:relative; }
+.sina-caret:after { content:''; position:absolute; left:2px; top:2px; width:1.5px; height:1em; background:currentColor; opacity:.6; animation:sina-caret .65s ease-in-out infinite; }
+.sina-typing { display:flex; width:62px; min-height:40px; align-items:center; justify-content:center; gap:5px; margin-bottom:12px; background:var(--paper); border:1px solid #e8ede8; border-radius:12px 12px 12px 3px; animation:sina-message-in .22s ease both; }
+.sina-typing>span[aria-hidden="true"] { width:5px; height:5px; border-radius:50%; background:var(--forest); opacity:.4; animation:sina-dot 1.05s ease-in-out infinite; }
+.sina-typing>span:nth-child(2) { animation-delay:.13s; }
+.sina-typing>span:nth-child(3) { animation-delay:.26s; }
+.sina-options { display:grid; grid-template-columns:1fr 1fr; gap:7px; margin-top:16px; animation:sina-message-in .28s cubic-bezier(.16,1,.3,1) both; }
+.sina-options button { min-width:0; padding:10px 11px; min-height:42px; text-align:left; font-size:12px; line-height:1.5; color:var(--forest); background:#fff; border:1px solid #cad7c7; border-radius:3px; transition:background .2s,border-color .2s; overflow-wrap:anywhere; }
+.sina-options button:hover { background:var(--paper); border-color:#6a8a6a; }
+.sina-handoff { margin-top:18px; animation:sina-message-in .28s cubic-bezier(.16,1,.3,1) both; }
+.sina-handoff>p { font-size:13px; margin-bottom:12px; }
+.sina-continue { display:flex; align-items:center; justify-content:center; gap:12px; min-height:46px; padding:11px 15px; border:1px solid var(--forest); border-radius:3px; background:var(--forest); color:#fff; font-size:13px; line-height:1.5; transition:background .2s; }
+.sina-continue:hover { background:#2e543f; }
+.sina-summary { margin-top:12px; font-size:11px; line-height:1.7; color:var(--body); }
+.sina-summary summary { cursor:pointer; width:fit-content; text-decoration:underline; text-underline-offset:3px; }
+.sina-summary p { margin-top:10px; padding:12px; background:var(--paper); white-space:pre-wrap; overflow-wrap:anywhere; }
+.sina-footer { flex-shrink:0; padding:12px 18px 14px; border-top:1px solid var(--border); background:#fff; }
+.sina-human { display:flex; align-items:center; justify-content:center; gap:7px; width:fit-content; max-width:100%; margin:0 auto 12px; color:var(--forest); font-size:11px; line-height:1.7; text-decoration:underline; text-underline-offset:3px; }
+.sina-composer { display:flex; align-items:flex-end; gap:8px; }
+.sina-composer textarea { flex:1; min-width:0; min-height:43px; max-height:100px; padding:11px 12px; resize:none; border:1px solid var(--input); border-radius:3px; font:inherit; font-size:13px; line-height:1.5; color:var(--ink); background:#fff; }
+.sina-composer textarea::placeholder { color:var(--body); opacity:1; }
+.sina-composer button { display:flex; align-items:center; justify-content:center; width:43px; height:43px; flex-shrink:0; border:1px solid var(--forest); border-radius:3px; background:var(--forest); color:#fff; }
+.sina-composer button:disabled { background:var(--paper); border-color:var(--border); color:var(--body); cursor:default; }
+.sina-privacy { margin-top:9px; font-size:10px; line-height:1.5; text-align:center; color:var(--body); }
+.sina-recovery { height:auto; min-height:190px; padding:24px; gap:17px; }
+.sina-recovery h2 { font-size:25px; }
+.sina-recovery p { font-size:13px; max-width:90%; }
+.sina-recovery .sina-close { position:absolute; top:15px; right:12px; }
+@keyframes sina-open { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes sina-fade { from { opacity:0; } to { opacity:1; } }
+@keyframes sina-message-in { from { opacity:0; transform:translateY(6px) scale(.985); } to { opacity:1; transform:translateY(0) scale(1); } }
+@keyframes sina-dot { 0%,55%,100% { transform:translateY(0); opacity:.35; } 28% { transform:translateY(-3px); opacity:.85; } }
+@keyframes sina-caret { 0%,100% { opacity:.3; } 50% { opacity:.7; } }
+@media (max-width:600px) {
+  .sina-panel { top:calc(var(--sina-viewport-top,0px) + 8px); right:8px; bottom:auto; width:calc(100vw - 16px); max-width:none; height:calc(var(--sina-viewport-height,100dvh) - 16px - env(safe-area-inset-bottom,0px)); }
+  .sina-header { padding:17px 14px; gap:10px; }
+  .sina-header-actions { gap:3px; }
+  .sina-icon-button { width:36px; height:40px; }
+  .sina-heading h2 { font-size:23px; }
+  .sina-heading p { font-size:10px; }
+  .sina-history { padding:20px 15px; }
+  .sina-message p { font-size:14px; }
+  .sina-options button { font-size:12px; min-height:46px; padding:11px; }
+  .sina-footer { padding:13px 15px 14px; }
+  .sina-composer textarea { font-size:16px; min-height:46px; padding:10px 12px; }
+  .sina-composer button { width:46px; height:46px; }
+  .sina-human { font-size:12px; }
+  .sina-privacy { font-size:10px; }
+  .sina-recovery { height:auto; top:auto; bottom:80px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .sina-panel,.sina-message,.sina-overlay,.sina-options,.sina-handoff,.sina-typing,.sina-typing>span,.sina-caret:after { animation:none; }
+  .sina-panel * { transition:none; }
+  .sina-launcher .sina-symbol { transition:none; transform:none; }
+}

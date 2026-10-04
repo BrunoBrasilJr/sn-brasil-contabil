@@ -1,0 +1,2 @@
+import { SmartLink } from './site';
+export default function NotFound() {return <section className="container page-hero" style={{paddingBottom:100}}><p className="eyebrow" style={{marginBottom:25}}>PÁGINA NÃO ENCONTRADA</p><h1>Vamos voltar<br />ao começo?</h1><p className="page-intro">Este endereço não está disponível. Você pode conhecer nossos serviços ou falar com a equipe.</p><SmartLink href="/" className="button" style={{marginTop:30}}>Voltar ao início</SmartLink></section>;}
