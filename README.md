@@ -26,7 +26,7 @@ pnpm start
 
 ## Publicação na Vercel
 
-Importe `BrunoBrasilJr/sn-brasil-contabil`, mantenha a raiz do projeto em `.` e use `pnpm build:vercel` como comando de build. O adaptador produz a configuração de publicação automaticamente. Não é necessário um `vercel.json`.
+Importe `BrunoBrasilJr/sn-brasil-contabil` e mantenha a raiz do projeto em `.`. O `vercel.json` define o preset Other e o comando `pnpm build:vercel`, evitando a detecção automática como Next.js. Nitro produz as rotas, os assets e a função de servidor no formato de publicação da Vercel.
 
 Use a branch padrão do repositório como branch de produção. Quando a integração GitHub estiver conectada à Vercel, novos pushes nessa branch poderão gerar deployments automaticamente.
 
